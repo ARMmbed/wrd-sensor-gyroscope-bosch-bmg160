@@ -30,6 +30,8 @@ class BMG160
 public:
     BMG160(I2CEx& _i2c, DigitalOutEx& _enable, InterruptInEx& _irq);
 
+    void sleep(void);
+
 private:
 
     typedef enum {
@@ -49,7 +51,6 @@ private:
     void init(void);
     void powerOn(void);
     void powerOnDone(void);
-    void sleep(void);
     void sleepDone(void);
 
     I2CEx& i2c;

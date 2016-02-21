@@ -21,10 +21,7 @@ BMG160::BMG160(I2CEx& _i2c, DigitalOutEx& _enable, InterruptInEx& _irq)
     :   i2c(_i2c),
         enable(_enable),
         irq(_irq)
-{
-    minar::Scheduler::postCallback(this, &BMG160::init)
-        .tolerance(1);
-}
+{}
 
 void BMG160::init()
 {
